@@ -1,7 +1,8 @@
 var students = require('../data/students.json');
 
 function createStudent(student) {
-    return studentModel.create(student)
+    students.push(student);
+    return students;
 }
 
 function findAllStudents() {

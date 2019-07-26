@@ -9,6 +9,7 @@ var app = express()
 // mongoose.connect('mongodb://localhost:27017/wbdv-su19', {useNewUrlParser: true});
 
 // Configure parsing JSON from body
+
 var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -33,7 +34,7 @@ const answerService = require('./services/answer.service.server.js')(app);
 
 var helloController = require('./controllers/HelloController.js')(app)
 
-var universityService = require('./services/university.service.server.js')
-universityService(app)
+// var universityService = require('./services/university.service.server.js')
+// universityService(app)
 
 app.listen(3000)
