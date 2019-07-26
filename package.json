@@ -1,0 +1,16 @@
+{
+  "name": "wbdv-su19-xuankong-server-node-assignment8",
+  "version": "1.0.0",
+  "description": "WebDev Node Middle Tier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xuan kong",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.5"
+  }
+}
