@@ -34,7 +34,4 @@ const answerService = require('./services/answer.service.server.js')(app);
 
 var helloController = require('./controllers/HelloController.js')(app)
 
-// var universityService = require('./services/university.service.server.js')
-// universityService(app)
-
 app.listen(3000)
