@@ -32,9 +32,9 @@ module.exports = function (app) {
         res.json(questionsDao.deleteQuestion(questionId))
     }
 
-    app.post('/api/questions', createQuestion)
-    app.get('/api/questions', findAllQuestions)
-    app.get('api/questions/:qid', findQuestionById)
-    app.put('api/questions/:qid', updateQuestion)
-    app.delete('api/questions/:qid', deleteQuestion)
+    app.post('/api/question', createQuestion)
+    app.get('/api/question', findAllQuestions)
+    app.get('api/question/:qid', findQuestionById)
+    app.put('api/question/:qid', updateQuestion)
+    app.delete('api/question/:qid', deleteQuestion)
 }

@@ -34,10 +34,15 @@ module.exports = function (app) {
 		res.json(studentDao.deleteStudent(studentId))
 	}
 
-	app.post('/api/students', createStudent);
-	app.get('/api/students', findAllStudents);
-	app.get('/api/students/:sid', findStudentById);
-	app.get('/api/students/username/:username', findStudentByUsername);
-	app.put('/api/students/:sid', updateStudent);
-	app.delete('/api/students/:sid', deleteStudent);
+	function test(req,res){
+		var url = "https://wbdv-su19-project-cors-server.herokuapp.com/?q=https://stockx.com/api/browse?_search=nike"
+		res.json(url);
+	}
+	app.post('/api/student', createStudent);
+	app.get('/api/student', findAllStudents);
+	app.get('/api/student/:sid', findStudentById);
+	app.get('/api/student/username/:username', findStudentByUsername);
+	app.put('/api/student/:sid', updateStudent);
+	app.delete('/api/student/:sid', deleteStudent);
+	app.get('/search/',test)
 }

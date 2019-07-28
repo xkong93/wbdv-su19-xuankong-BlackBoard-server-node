@@ -34,4 +34,7 @@ const answerService = require('./services/answer.service.server.js')(app);
 
 var helloController = require('./controllers/HelloController.js')(app)
 
+
+console.log("server started")
+
 app.listen(3000)
