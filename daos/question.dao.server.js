@@ -1,22 +1,28 @@
 var questions = require("../data/questions.json")
 
 
-function createQuestion(quesiton){
-    questions.push(quesiton);
-    return questions
+function createQuestion(newQuesiton) {
+    const data = questions.find(quesiton => quesiton._id == newQuesiton._id)
+    if (data == undefined) {
+        questions.push(newQuesiton);
+        return questions
+    }
+    return null;
+
 }
 
 function findAllQuestions() {
-	return questions;
+    return questions;
 }
+
 function findQuestionById(qid) {
-	return questions.find(question => question._id == qid)
+    return questions.find(question => question._id == qid)
 }
 
 
-function updateQuestion(qid,updateQuesiton){
-    for (var i = 0; i < questions.length; i++){
-        if (questions[i]._id == qid){
+function updateQuestion(qid, updateQuesiton) {
+    for (var i = 0; i < questions.length; i++) {
+        if (questions[i]._id == qid) {
             questions[i] = updateQuesiton;
         }
     }
@@ -25,7 +31,7 @@ function updateQuestion(qid,updateQuesiton){
 
 function deleteQuestion(qid) {
     var index = questions.findIndex(question => question._id == qid);
-    questions.splice(index,1);
+    questions.splice(index, 1);
     return questions
 }
 

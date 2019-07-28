@@ -5,6 +5,7 @@
 var answersDao = require('../daos/answer.dao.server.js')
 
 module.exports = function (app) {
+
     function studentAnswersQuestion(req, res) {
         const answer = req.body;
         const sid = req.params.sid;
@@ -13,8 +14,13 @@ module.exports = function (app) {
         answer['question'] = qid;
         // answer.student = sid;
         // answer.question = qid;
-        res.json(answersDao.answerQuestion(answer));
-
+        const data = answersDao.answerQuestion(answer);
+		if (data === null){
+			res.status(409);
+			res.send('the answer already exists')
+		}else{
+			res.json(data);
+		}
     }
 
     function findAllAnswers(req, res) {

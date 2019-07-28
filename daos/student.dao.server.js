@@ -1,8 +1,12 @@
 var students = require('../data/students.json');
 
-function createStudent(student) {
-    students.push(student);
-    return students;
+function createStudent(newStudent) {
+    var data = students.find(student => student._id == newStudent._id)
+    if (data == undefined) {
+        students.push(newStudent);
+        return students;
+    }
+    return null;
 }
 
 function findAllStudents() {

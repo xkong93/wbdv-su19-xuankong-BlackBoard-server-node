@@ -8,7 +8,13 @@ module.exports = function (app) {
 
     function createQuestion(req, res) {
         const question = req.body;
-        res.json(questionsDao.createQuestion(question))
+		var data = questionsDao.createQuestion(question)
+		if (data === null){
+			res.status(409);
+			res.send('the question already exists')
+		}else{
+			res.json(data);
+		}
     }
 
     function findAllQuestions(req, res) {

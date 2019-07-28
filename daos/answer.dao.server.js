@@ -1,10 +1,15 @@
 var answers = require('../data/answers.json');
 
 
-function answerQuestion(answer) {
+function answerQuestion(newAnswer) {
+    const data = answers.find(answer => answer._id == newAnswer._id)
+    if (data == undefined) {
+        answers.push(newAnswer)
+        return answers
+    }
+    return null;
 
-    answers.push(answer)
-    return answers
+
 }
 
 function findAllAnswers() {
@@ -31,7 +36,7 @@ function findAnswersbyStudentForQuestion(studentId, questionId) {
 module.exports = {
     answerQuestion, findAllAnswers,
     findAnswerById, findAnswersByQuestionId,
-    findAnswersByStudentId,findAnswersbyStudentForQuestion
+    findAnswersByStudentId, findAnswersbyStudentForQuestion
 }
 
 

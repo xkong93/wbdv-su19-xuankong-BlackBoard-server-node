@@ -4,7 +4,13 @@ module.exports = function (app) {
 
 	function createStudent(req, res) {
 		var student = req.body
-		res.json(studentDao.createStudent(student));
+		const data = studentDao.createStudent(student)
+		if (data === null){
+			res.status(409);
+			res.send('the student already exists')
+		}else{
+			res.json(data);
+		}
 	}
 
 	function findAllStudents(req, res) {
