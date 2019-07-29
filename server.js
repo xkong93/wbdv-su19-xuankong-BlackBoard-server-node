@@ -37,4 +37,4 @@ var helloController = require('./controllers/HelloController.js')(app)
 
 console.log("server started")
 
-app..listen(process.env.PORT || 3000)
+app.listen(process.env.PORT || 3000)
