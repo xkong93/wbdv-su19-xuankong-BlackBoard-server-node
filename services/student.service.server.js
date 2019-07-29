@@ -41,8 +41,7 @@ module.exports = function (app) {
 	}
 
 	function test(req,res){
-		var url = "https://wbdv-su19-project-cors-server.herokuapp.com/?q=https://stockx.com/api/browse?_search=nike"
-		res.json(url);
+		res.send("hello world!");
 	}
 	app.post('/api/student', createStudent);
 	app.get('/api/student', findAllStudents);
@@ -50,5 +49,5 @@ module.exports = function (app) {
 	app.get('/api/student/username/:username', findStudentByUsername);
 	app.put('/api/student/:sid', updateStudent);
 	app.delete('/api/student/:sid', deleteStudent);
-	app.get('/search/',test)
+	app.get('',test)
 }
