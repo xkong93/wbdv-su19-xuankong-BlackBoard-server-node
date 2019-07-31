@@ -8,8 +8,6 @@
           </li
       </ol>
    </li> 
-   <li>
-     login/register
-   </li>
+
 <ul>
     
