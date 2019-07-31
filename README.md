@@ -6,10 +6,10 @@
         <li>
           how to implement composite key?
           </li
-    </ol>
+      </ol>
    </li> 
    <li>
      login/register
-        </li>
+   </li>
 <ul>
     
