@@ -40,7 +40,7 @@ module.exports = function (app) {
 
     app.post('/api/question', createQuestion)
     app.get('/api/question', findAllQuestions)
-    app.get('api/question/:qid', findQuestionById)
-    app.put('api/question/:qid', updateQuestion)
-    app.delete('api/question/:qid', deleteQuestion)
+    app.get('/api/question/:qid', findQuestionById)
+    app.put('/api/question/:qid', updateQuestion)
+    app.delete('/api/question/:qid', deleteQuestion)
 }
